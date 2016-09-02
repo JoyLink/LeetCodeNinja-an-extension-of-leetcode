@@ -1,0 +1,32 @@
+
+Design a data structure that supports all following operations in average O(1) time.
+
+1. insert(val): Inserts an item val to the set if not already present.
+2. medium(val): Returns a return the medium element of the array
+
+
+
+class Meduim(object):
+
+        def __init__(self):
+            self.fronthalf = []
+            self.backhalf = []
+
+        def insert(self, val):
+            heapq.heappush(self.fronthalf, -val)
+
+            if len(self.backhalf) > 0 and -self.fronthalf[0] > self.backhalf[0]:
+                t = -heapq.heappop(self.fronthalf)
+                p = -heapq.heappop(self.backhalf)
+                heapq.heappush(self.fronthalf, p)
+                heapq.heappush(self.backhalf, t)
+            if len(self.fronthalf) - len(self.backhalf) == 2:
+                t = -heapq.heappop(self.fronthalf)
+                heapq.heappush(self.backhalf, t)
+
+        def medium(self):
+            if len(self.fronthalf) == len(self.backhalf):
+                return (-self.fronthalf[0] + self.backhalf[0]) / 2
+            else:
+                return -self.fronthalf[0]
+
