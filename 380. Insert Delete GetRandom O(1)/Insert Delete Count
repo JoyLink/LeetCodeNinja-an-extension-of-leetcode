@@ -1,0 +1,33 @@
+Design a data structure that supports all following operations in average O(1) time.
+
+1. insert(val): Inserts an item val to the set if not already present.
+2. remove(val): Removes an item val from the set if present.
+3. count(val): Returns a return the number of some element stored in the data structure
+
+
+class RandomizedSet(object):
+    def __init__(self):
+        self.count = {} 
+        self.dic = {}
+
+    def insert(self, val):
+        if val in dic:
+            self.count[val] += 1
+        else:
+            self.count[val] = 1
+        
+
+    def delete(self, val):
+        """return False if there is no such a val in the data structure
+        if val not in self.dic or self.dic[val] == 0:
+            return False
+        self.count[val] -= 1
+        if self.count[val] == 0:
+            del self.count[val] 
+            del self.dic[val]
+
+    def count(self, val):
+        """return 0 if there is no such a val in the data sturecture
+        if not val in self.count[val] or self.count[val] == 0:
+            return 0
+        return self.count[val] 
