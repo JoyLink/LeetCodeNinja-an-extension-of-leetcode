@@ -21,7 +21,7 @@ class Solution(object):
         currentRight = rectangles[0][0]
         for rec in rectangles:
             currentRight = min(currentRight, rec[0])
-            q.add((rec[0], rec))
+            q.append((rec[0], rec))
         q.sort()
         while(len(q)):
             top = q.pop(0)
