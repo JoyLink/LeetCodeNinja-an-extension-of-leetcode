@@ -7,27 +7,28 @@ Design a data structure that supports all following operations in average O(1) t
 
 class RandomizedSet(object):
     def __init__(self):
-        self.count = {} 
-        self.dic = {}
+        self.count = {}
 
     def insert(self, val):
-        if val in dic:
+        if val in self.count:
             self.count[val] += 1
         else:
             self.count[val] = 1
-        
+
 
     def delete(self, val):
         """return False if there is no such a val in the data structure
-        if val not in self.dic or self.dic[val] == 0:
+        """
+        if val not in self.count :
             return False
         self.count[val] -= 1
         if self.count[val] == 0:
-            del self.count[val] 
-            del self.dic[val]
+            del self.count[val]
 
-    def count(self, val):
+    def countVal(self, val):
         """return 0 if there is no such a val in the data sturecture
-        if not val in self.count[val] or self.count[val] == 0:
+        """
+        if val not in self.count:
             return 0
-        return self.count[val] 
+        return self.count[val]
+
