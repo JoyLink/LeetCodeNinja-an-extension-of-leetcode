@@ -11,5 +11,24 @@ as [1,2]. (coordinate of left point is 1 and
 
 
 
-
+class Solution(object):
+    def isPerfectLineSegmentCover(self, rectangles):
+        """
+        :type rectangles: List[List[int]]
+        :rtype: bool
+        """
+        q = []
+        currentRight = rectangles[0][0]
+        for rec in rectangles:
+            currentRight = min(currentRight, rec[0])
+            q.add((rec[0], rec))
+        q.sort()
+        while(len(q)):
+            top = q.pop(0)
+            if top[0] != currentRight:
+                return False
+            else:
+                currentRight = top[1][1]
+        return true 
+ 
 
