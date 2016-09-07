@@ -1,0 +1,2 @@
+Given a non-empty 1D array and an integer K,
+ find the first of interval where sum of all element equals to K
