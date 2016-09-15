@@ -1,0 +1,4 @@
+Equations are given in the format A / B / C = k, where A and B are variables
+ represented as strings, and k is a real number (floating point number). 
+Given some queries(e.g. [A, B, C]), return the answers. If the answer does not exist, 
+return -1.0.
